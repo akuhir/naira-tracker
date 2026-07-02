@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { supabase } from './supabaseClient'
+import BudgetSection from './Budgets.jsx'
 
 const colors = {
   bg: '#0F1115',
@@ -287,6 +288,9 @@ function Dashboard({ session }) {
             </div>
           </div>
         </div>
+
+        {/* Budgets */}
+        <BudgetSection session={session} transactions={transactions} categories={categories} colors={colors} font={font} />
 
         {/* Add transaction toggle */}
         {!showForm ? (
